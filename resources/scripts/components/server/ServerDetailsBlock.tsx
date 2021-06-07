@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import tw, { TwStyle } from 'twin.macro';
-import { faCircle, faEthernet, faHdd, faMemory, faMicrochip, faServer } from '@fortawesome/free-solid-svg-icons';
+import { faCircle, faEthernet, faHdd, faMemory, faMicrochip, faServer, faHome } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { bytesToHuman, megabytesToHuman } from '@/helpers';
 import TitledGreyBox from '@/components/elements/TitledGreyBox';
@@ -106,6 +106,10 @@ const ServerDetailsBlock = () => {
             <p css={tw`text-xs mt-2`}>
                 <FontAwesomeIcon icon={faHdd} fixedWidth css={tw`mr-1`}/>&nbsp;{bytesToHuman(stats.disk)}
                 <span css={tw`text-neutral-500`}> / {diskLimit}</span>
+            </p>
+            <p css={tw`text-xs mt-2`}>
+                <FontAwesomeIcon icon={faHome} fixedWidth css={tw`mr-1`}/>&nbsp;Housing server
+                <span css={tw`text-neutral-500`}> {name.includes("Housing") ? "✔️" : "❌"}</span>
             </p>
         </TitledGreyBox>
     );
